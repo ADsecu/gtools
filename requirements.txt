@@ -1,0 +1,5 @@
+streamlit
+pandas
+openpyxl
+DateTime
+streamlit-extras
