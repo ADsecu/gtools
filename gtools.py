@@ -2,13 +2,14 @@ import streamlit as st
 import pandas as pd
 import openpyxl
 from streamlit_extras.stoggle import stoggle
+import datetime
 
 
 
 
 
 
-st.title("shortcut")
+st.title("Assistant Tool")
 col1,col2 = st.columns(2)
 with col1:
   with st.expander("**OR**"):
@@ -24,6 +25,31 @@ with col2:
   with st.expander("**البحث بالعمر**"):
     start_age, end_age = st.select_slider("AGE",options=range(15,101,1), value=[15,55])
     st.code(">={} AND <={}".format(start_age,end_age), language='sql')
+st.info("")
+
+with st.expander("Dates",expanded=True):
+  col1,col2,col3 = st.columns(3)
+  with col1:
+    d = st.date_input("إختر التاريخ",)
+  with col2:
+    d_days = st.number_input("عدد الأيام",value=90)
+  with col3:
+    st.text_input("تاريخ النهاية",value=d+datetime.timedelta(days=d_days-1))
+
+
+
+
+
+
+
+
+
+
+st.info("")
+
+
+st.subheader("EXTRA")
+
 if st.checkbox("رفع ملف العينة"):
   "---"
   col1,col2 = st.columns(2)
