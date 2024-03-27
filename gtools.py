@@ -23,7 +23,7 @@ with col1:
     stoggle("EXCEL function",""" =textjoin(" OR ",TURE,CellRange)""")
 with col2:
   with st.expander("**البحث بالعمر**"):
-    start_age, end_age = st.select_slider("AGE",options=range(15,101,1), value=[15,55])
+    start_age, end_age = st.select_slider("AGE",options=range(15,101,1), value=[30,40])
     st.code(">={} AND <={}".format(start_age,end_age), language='sql')
 st.info("")
 
